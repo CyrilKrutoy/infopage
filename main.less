@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@bgColor:#16a086;
+@colorText: #FFFFFF;
+@bgBlock:#FFFFFF;
+@divText: #444444;
+@family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+.bodySize() {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.flex(@aling:center, @just:center) {
+  display: flex;
+  align-items: @aling;
+  justify-content: @just;
+}
+
+body {
+  .bodySize();
+  .flex(center, center);
+  background: @bgColor;
+  flex-direction: column;
+  .About_Us{
+    color: #FFFFFF;
+    .flex( center, center);
+    flex-direction: column;
+    }
+.Lorem{
+margin-top: 15px;
+font-size: 15px;
+    }
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  height: 419px;
+  width: 723px;
+  margin-top: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+cursor: pointer;
+.info_photo {
+display: flex; 
+flex-direction: column;
+align-items: center;
+font-family: @family;
+max-width: 224px;
+height: 419px;
+width: 221px;
+background: @bgBlock;
+color: @divText;
+.person {
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+&:hover {
+.social {
+opacity: 1;
+}
+}
+.social {
+align-items: center;
+justify-content: space-evenly;
+display: flex;
+width: 180px;
+height: 50px;
+background: rgba(22, 160, 135, 0.637);
+position: absolute;
+opacity: 0;
+transition: opacity 0.8s linear;
+img {
+height: 25px;
+padding: 0 5px;
+&:hover {
+animation: beanbag 0.5s linear;
+}
+}
+}
+}
+              
+.name {
+margin-top: 20px;
+font-size: 18px;
+}
+.function {
+font-style: italic;
+font-size: 13px;
+}
+.description{
+width: 195px;
+height: 92px;
+margin-top: 20px;
+font-size: 15px;
+}
+display: flex;
+font-family: @family;
+flex-direction: column;
+width: 220px;
+height: 420px;
+align-items: center;
+}
+}
+              
+              
+@keyframes beanbag {
+0% {
+transform: rotate(20deg);
+}
+15% {
+transform: rotate(-20deg);
+}
+30% {
+transform: rotate(20deg);
+}
+45% {
+transform: rotate(-20deg);
+}
+60% {
+transform: rotate(20deg);
+}
+45% {
+transform: rotate(-20deg);
+}
+90% {
+transform: rotate(20deg);
+}100%{
+transform: rotate(-20deg);
+}
+}        
+@media (min-width: 468px) and (max-width: 768px) {
+  body {
+overflow-y: unset;
+.info {
+flex-wrap: wrap;
+width: 100%;
+max-width: 655px;
+justify-content: space-evenly;
+}
+.info_photo:nth-child(3n) {
+margin-top: 50px;
+align-self: center;
+}
+}
+}
+              
+@media (max-width: 468px) {
+body {
+overflow-y: unset;
+.info{
+flex-direction: column;
+align-items: center;
+}
+.info_photo {
+margin-bottom: 15px;
+}
+}
+}
+              
